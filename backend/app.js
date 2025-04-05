@@ -7,6 +7,10 @@ import { CLIENT_URL, NODE_ENV, PORT } from './config/env.js';
 import authRouter from './routes/auth.router.js';
 import connectToDatabase from './database/mongoose.js';
 import cookieParser from 'cookie-parser';
+import job from './lib/cron.js';
+
+
+job.start();
 
 app.use(cors({
     origin: CLIENT_URL,
